@@ -1,4 +1,6 @@
 FROM php:5.6.6-apache
+RUN echo "America/Sao_Paulo" > /etc/timezone \
+&& dpkg-reconfigure -f noninteractive tzdata
 
 RUN a2enmod proxy_fcgi rewrite
 
